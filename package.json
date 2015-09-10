@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/shuvalov-anton/your-moms-twitbot#readme",
   "dependencies": {
-    "mnml-tpl": "^1.0.2",
+    "chalk": "^1.1.1",
     "node-twitter": "^0.5.3",
     "twitter": "^1.2.5",
     "twitter-tokens": "^1.0.1"
