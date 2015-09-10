@@ -17,11 +17,11 @@ exports.logMessage = function(t) {
 }
 
 exports.logReply = function(t) {
+  var name = t.user.screen_name;
   console.log(c.red('@your_mommy: '), '@' + name + ' ' + exports.reply(t));
 }
 
 exports.reply = function(t) {
-  var name = t.user.screen_name;
   var message = t.text;
   var phrases = replies.keys.reduce(function(memo, key) {
     if (!~message.indexOf(key)) return memo;
