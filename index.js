@@ -15,8 +15,9 @@ var client = new Twitter(tokens)
 client.stream('statuses/filter', { track: replies.keys.join(',') }, function(stream){
   stream
     .on('data', function(t) {
-      if(~t.text.indexOf('RT')) return;
-      if(t.user.screen_name === 'your_mommy') return;
+      if (~t.text.indexOf('RT')) return;
+      if (t.user.screen_name === 'your_mommy') return;
+      if (t.in_reply_to_status_id) return;
       bot.logMessage(t);
       client.post('statuses/update', {
         status: bot.reply(t),
